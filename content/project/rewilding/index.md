@@ -2,8 +2,6 @@
 title: "Rewilding and transformative governance"
 subtitle: "An R Package"
 excerpt: "This theme has a form-to-email feature built in, thanks to the simple Formspree integration. All you need to activate the form is a valid recipient email address saved in the form front matter."
-date: 2019-07-01
-author: "Eric Anderson"
 draft: false
 tags:
   - hugo-site
