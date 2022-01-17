@@ -1,5 +1,5 @@
 ---
-author: The R Markdown Team @RStudio
+author: The SpaSES Lab
 cascade:
   show_author_byline: true
   show_comments: false
