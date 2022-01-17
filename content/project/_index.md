@@ -8,7 +8,7 @@ cascade:
     show_sidebar_adunit: false
     text_link_label: View all projects
     text_link_url: /project/
-description: Our work seeks to understand how how the interactions between people, their environment, and the institutions that govern them inspire (or inhibit) conservation action and shapes the effectiveness of those actions.
+description: Our work seeks to understand how how the interactions between people, their environment, and the institutions that govern them inspire (or inhibit) conservation action and shapes the effectiveness of those actions. This page is currently under construction.
 layout: list-grid
 show_author_byline: true
 show_button_links: false
