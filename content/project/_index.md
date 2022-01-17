@@ -3,12 +3,12 @@ author: The R Markdown Team @RStudio
 cascade:
   show_author_byline: true
   show_comments: false
-  show_post_date: true
+  show_post_date: false
   sidebar:
-    show_sidebar_adunit: true
+    show_sidebar_adunit: false
     text_link_label: View all projects
     text_link_url: /project/
-description: Give your projects a place to live online.
+description: Our work seeks to understand how how the interactions between people, their environment, and the institutions that govern them inspire (or inhibit) conservation action and shapes the effectiveness of those actions.
 layout: list-grid
 show_author_byline: true
 show_button_links: false
@@ -22,7 +22,7 @@ sidebar:
   text_link_label: ""
   text_link_url: ""
   title: A Sidebar for Your Projects
-title: A Project Portfolio To Grow
+title: SpaSES Lab Projects
 ---
 
 ** No content for the project index. This file provides front matter for the blog including the layout and boolean options. **
