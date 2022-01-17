@@ -1,0 +1,45 @@
+[mattwilliamson]
+  name = "Matt Williamson"
+  mugshot = "mugshots/matt.png"
+  text = [
+    "Quantitative Geographer \\& Ecologist. Teaches environmental policy, governance, and data analysis",
+    "Assistant professor, [Human-Environment Systems](https://www.boisestate.edu/hes/), Boise State University."
+  ]
+  role = "Assistant professor"
+  [mattwilliamson.social]
+    email = "mattwilliamson@boisestate.edu"
+    twitter = "MwilliamsonMatt"
+    github = "mattwilliamson13"
+    www = "https://www.boisestate.edu/hes/people/matt-williamson/"
+
+[helinaalvarez]
+  name = "Helina Alvarez"
+  mugshot = "mugshots/helina.png"
+  text = ["2020-, Ph.D. Climate change impacts on the contributions of the Fort Hall Bottoms to the well-being of Shoshone-Bannock Peoples"]
+  [helinaalvarez.social]
+    email = "helinaalvarez@u.boisestate.edu"
+  
+[shannonspragg]
+  name = "Shannon Spragg"
+  mugshot = "mugshots/shannon.png"
+  text = ["2020-, M.Sc. Integrating social, political, and economic factors into spatial models of grizzly bear conflict in British Columbia."]
+  [shannonspragg.social]
+    email = "shannonspragg@u.boisestate.edu"
+    twitter = "@spragg_shannon"
+    github = "shannonspragg"
+
+[jamiefaselt]
+  name = "Jamie Faselt"
+  mugshot = "mugshots/jamie.png"
+  text = ["2020-, M.Sc. Assessing the impacts of the social and political landscape on Plains Bison reintroduction efforts in Montana."]
+  [jamiefaselt.social]
+    email = "jamiefaselt@u.boisestate.edu"
+    github = "jamiefaselt"
+
+[katesweet]
+  name = "Kate Sweet"
+  mugshot = "mugshots/kate.png"
+  text = ["2021-, Ph.D. Interactions between governance preferences and environmental conditions on species reintroductions in North America."]
+  [katesweet.social]
+    email = "katesweet@u.boisestate.edu"
+    github = "katesweet"    

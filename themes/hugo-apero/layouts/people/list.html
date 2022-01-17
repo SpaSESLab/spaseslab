@@ -1,0 +1,23 @@
+{{ define "main" }}
+{{ $caller := . }}
+<main class="page-main pa4" role="main">
+  <section class="blog-content db flex-ns flex-row-ns flex-wrap-ns items-start mw8 center">
+        {{ .Content }}
+        {{$current := .Site.Data.people.current }}
+        {{$past := .Site.Data.people.past }}
+        <h2>Current members</h2>
+        <div class="listing">
+            {{ range $current }}
+                {{ if (eq .name "Matt Williamson")}}
+                    {{ partial "person.html" . }}
+                {{ end }}
+            {{ end }}
+            {{ range $current }}
+                {{ if not (eq .name "Matt Williamson")}}
+                    {{ partial "person.html" . }}
+                {{ end }}
+            {{ end }}
+        </div>
+    </section>
+</main>
+{{ end }}

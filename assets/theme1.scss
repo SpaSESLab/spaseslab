@@ -1,0 +1,72 @@
+// basic color options: use only color names as shown in the
+// "Color Palette" section of https://tachyons.io/docs/themes/skins/
+$siteBgColor: "light-gray" ;
+$sidebarBgColor: "navy" ;
+$textColor: "near-black" ;
+$sidebarTextColor: "white" ;
+$headlineColor: "dark-green" ;
+$headingColor: "dark-green" ;
+$bodyLinkColor: "blue" ;
+$navLinkColor: "dark-green" ;
+$sidebarLinkColor: "lightest-blue" ;
+$footerTextColor: "dark-green" ;
+$buttonTextColor: "dark-green" ;
+$buttonBgColor: "dark-green" ;
+$buttonHoverTextColor: "lightest-blue" ;
+$buttonHoverBgColor: "blue" ;
+$borderColor: "near-black" ;
+
+.mugshot {
+    filter: grayscale(70%);
+}
+
+.item {
+    &:hover {
+        .mugshot {
+            filter: grayscale(0%);
+        }
+    }
+ .summary {
+        span {
+            display: inline-block;
+            a {
+                display: inline;
+                color: $bodyLinkColor;
+                background: none;
+                padding: 0 0;
+                border-radius: 0;
+                font-weight: inherit;
+                &:hover {
+                    color: $buttonHoverTextColor;
+                }
+            }
+        }
+    }
+    .social {
+        a {
+            color: $bodyLinkColor;
+            background: none !important;
+            border-bottom: none;
+        }
+    }
+}
+.listing {
+    text-align: center;
+    margin-top: 5em;
+    margin-bottom: 5em;
+}
+#content {
+    ul, li {
+        list-style-type: circle;
+        line-height: 150%;
+    }
+    li {
+        margin-bottom: 1em;
+    }
+}
+.listing {
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;  
+   grid-gap: 20px;
+   padding: 20px 20px 20px;
+}
