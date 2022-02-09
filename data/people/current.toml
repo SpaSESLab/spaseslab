@@ -3,8 +3,7 @@
   mugshot = "mugshots/matt.png"
   text = [
     "Quantitative Geographer \\& Ecologist. Teaches environmental policy, governance, and data analysis",
-    "Assistant professor, [Human-Environment Systems](https://www.boisestate.edu/hes/), Boise State University.",
-    "[More...](/about/matt/)"
+    "Assistant Professor, [Human-Environment Systems](https://www.boisestate.edu/hes/), Boise State University."
   ]
   role = "Assistant professor"
   [mattwilliamson.social]
