@@ -3,13 +3,13 @@ title: "Introducing connectivity models"
 author: "Matt Williamson"
 date: '2022-04-12'
 excerpt: This blog works through some of the graph-theoretic properties of wildlife
-  connectivity modeling with examples in R
+  connectivity modeling with examples in R. We start with network metrics in igraph and then move to spatial models using gDistance.
 subtitle: ''
 draft: false
 series: 
 tags: 
 categories: 
-layout: single
+layout: single-sidebar
 ---
 ```{r, setup, include=FALSE}
 knitr::opts_chunk$set(
