@@ -3,3 +3,6 @@
 .RData
 .Ruserdata
 public
+content/blog/intro-graphs/data/*
+content/blog/intro-graphs/RAW/*
+content/blog/intro-graphs/EXTRACTIONS/*
