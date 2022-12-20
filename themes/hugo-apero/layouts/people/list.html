@@ -18,6 +18,12 @@
                 {{ end }}
             {{ end }}
         </div>
+        <h2>Former members</h2>
+        <div class="listing">
+            {{ range $past }}
+                {{ partial "person.html" . }}
+            {{ end }}
+            </div>
     </section>
 </main>
 {{ end }}

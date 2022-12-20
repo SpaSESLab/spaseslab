@@ -10,6 +10,11 @@ series:
 tags: 
 categories: 
 layout: single-sidebar
+output:
+  blogdown::html_page:
+    toc: true
+    toc_depth: 1
+    highlight: tango
 ---
 ```{r, setup, include=FALSE}
 knitr::opts_chunk$set(
@@ -61,7 +66,7 @@ remotes::install_cran(cran_pkgs)
 
 ## Load your libraries and then some data
 
-We'll need a few different libraries to be able to bring in spatial data and then convert it into a graph form, so we'll load those here. Remember that `?` followed by the package name can help you access the different helpfiles for each function in the package. Since you all work on things that fly, I thought we'd start by using a dataset on birds. We'll use the 2015 Priority Areas for Conservation (PACs) for the Greater Sage Grouse. PACs represent areas identified as essential for the long-term conservation of the sage-grouse (you can learn more about this dataset [here](https://databasin.org/datasets/88fd5a2706d9443a838f84be1a593ff2/). As such, we might imagine that connectivity among these PACs is also important making them a reasonable choice for our analysis.
+We'll need a few different libraries to be able to bring in spatial data and then convert it into a graph form, so we'll load those here. Remember that, `?`, followed by the package name can help you access the different helpfiles for each function in the package. Since you all work on things that fly, I thought we'd start by using a dataset on birds. We'll use the 2015 Priority Areas for Conservation (PACs) for the Greater Sage Grouse. PACs represent areas identified as essential for the long-term conservation of the sage-grouse (you can learn more about this dataset [here](https://databasin.org/datasets/88fd5a2706d9443a838f84be1a593ff2/). As such, we might imagine that connectivity among these PACs is also important making them a reasonable choice for our analysis.
 
 ```{r loadlibdat}
 library(sf)

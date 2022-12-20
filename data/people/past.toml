@@ -1,0 +1,16 @@
+[shannonspragg]
+  name = "Shannon Spragg"
+  mugshot = "mugshots/shannon.png"
+  text = ["2020-2022, M.Sc. Integrating social, political, and economic factors into spatial models of grizzly bear conflict in British Columbia."]
+  [shannonspragg.social]
+    email = "shannonspragg@u.boisestate.edu"
+    twitter = "@spragg_shannon"
+    github = "shannonspragg"
+
+[jamiefaselt]
+  name = "Jamie Faselt"
+  mugshot = "mugshots/jamie.png"
+  text = ["2020-2022, M.Sc. Assessing the impacts of the social and political landscape on Plains Bison reintroduction efforts in Montana."]
+  [jamiefaselt.social]
+    email = "jamiefaselt@u.boisestate.edu"
+    github = "jamiefaselt"

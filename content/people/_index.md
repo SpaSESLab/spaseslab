@@ -1,4 +1,4 @@
 ---
 title: People
-loyout: list-grid
+layout: list
 ---
