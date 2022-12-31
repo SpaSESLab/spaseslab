@@ -146,7 +146,11 @@ enableEmoji = true
     title = "Classes we teach"
     url = "/classes/"
     weight = 5
-  
+  [[menu.header]]
+    name = "Join Us"
+    title = "Available positions"
+    url = "/recruit/"
+    weight = 6
     
   # Configure footer  
 #  [[menu.footer]]
