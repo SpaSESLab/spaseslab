@@ -8,25 +8,59 @@
   role = "Assistant professor"
   [mattwilliamson.social]
     email = "mattwilliamson@boisestate.edu"
-    twitter = "MwilliamsonMatt"
+    twitter = "@MwilliamsonMatt"
     github = "mattwilliamson13"
     www = "https://www.boisestate.edu/hes/people/matt-williamson/"
 
-[katiemurenbeeld]
+[amurenbeeldkatie]
   name = "Katie Murenbeeld"
   mugshot = "mugshots/katie.png"
   text = ["2022, Postdoctoral Researcher. Causes and consequences of NEPA conflict."]
-  [katiemurenbeeld.social]
+  [amurenbeeldkatie.social]
     email = "katiemurenbeeld@u.boisestate.edu"
+    github = "KatieMurenbeeld"
 
-
-[hollynesbitt]
+[anesbittholly]
   name = "Holly Nesbitt"
   mugshot = "mugshots/holly.png"
   text = ["2022-, Postdoctoral Researcher. Spatial dynamics of social capital."]
-  [hollynesbitt.social]
+  [anesbittholly.social]
     email = "nesbitt.holly@gmail.com"
     twitter = "@HollyNesbitt"
-  
+    github = "nesbittholly"
 
+[atarverryan]
+  name = "Ryan Tarver"
+  mugshot = "mugshots/ryant.png"
+  text = ["2023-, Postdoctoral Researcher. Cross-boundary collaboration and US protected areas"]
+  [atarverryan.social]
+    email = "ryantarver@boisestate.edu"
+    github = "ryantarver"    
 
+[bkrzywickimike]
+  name = "Mike Krzywicki"
+  mugshot = "mugshots/mike.png"
+  text = ["2023-, PhD Ecology, Evolution, and Behavior. Conservation institutions in Mexico."]
+  [bkrzywickimike.social]
+    email = "michaelkrzywicki@u.boisestate.edu"
+    
+[cwallben]
+  name = "Ben Wall"
+  mugshot = "mugshots/ben.png"
+  text = ["2023-, Masters of Env. Mgmt. Spatial patterns of wildlife conflict in the popular media."]
+  [cwallben.social]
+    email = "benwall439@u.boisestate.edu"
+
+[dbreedlovesarah]
+  name = "Sarah Breedlove"
+  mugshot = "mugshots/sarah.png"
+  text = ["2023-, BSc. Spatial patterns of wildlife conflict in the popular media."]
+  [dbreedlovesarah.social]
+    email = "sarahbreedlove@u.boisestate.edu"
+
+[dpotterlaura]
+  name = "Laura Potter"
+  mugshot = "mugshots/laura.png"
+  text = ["2023-, BA. Spatial patterns of wildlife conflict in the popular media."]
+  [dpotterlaura.social]
+    email = "laurapotter@u.boisestate.edu"
