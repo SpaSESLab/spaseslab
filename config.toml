@@ -32,7 +32,7 @@ enableEmoji = true
   orgLocal = "Human-Environment Systems, Boise State University"
   description = "Projects, Blog, Code, and Homepage of the SpasSES Lab"
   #favicon = "/img/favicon.ico"
-  #logo = "/img/blogophonic-mark-dark.png"
+  logo = "/img/SpaSES_Logo.png"
   mainSections = ["about", "values", "projects", "blog", "classes"]
   navallcaps = true
   # show/hide social icons in site header & footer
@@ -41,7 +41,7 @@ enableEmoji = true
   socialInFooter = true
   # Default image for social sharing and search engines. 
   # Place image file in `static` folder and specify image name here.
-  sharing_image = "/img/LEFCard.png"
+  sharing_image = "/img/Buffalo_Mosaic.png"
   # Twitter username (without @). Used when a visitor shares your site on Twitter.
   twitter = "MwilliamsonMatt"
   
