@@ -1,8 +1,8 @@
 ---
-title: "Interdisciplinarity and the Brickyard"
-author: "Matt Williamson"
-date: '2023-10-13'
-excerpt: I've been thinking about B.K. Forscher's Chaos in the Brickyard essay a lot lately and how my thinking on the folk theorem of science has evolved
+title: "The Trivium and Research"
+author: "Katie Murenbeeld"
+date: '2023-10-27'
+excerpt: 
 subtitle: ''
 draft: false
 series: 
