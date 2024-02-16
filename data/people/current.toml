@@ -37,6 +37,13 @@
     email = "ryantarver@boisestate.edu"
     github = "ryantarver"    
 
+[browenemily]
+  name = "Emily Rowen"
+  mugshot = "mugshots/emily.png"
+  text = ["2024-, PhD Ecology, Evolution, and Behavior. Agricultural entrepreneurship and rural resilience"]
+  [browenemily.social]
+    email = "emilyrowen@u.boisestate.edu"
+    
 [bkrzywickimike]
   name = "Mike Krzywicki"
   mugshot = "mugshots/mike.png"
