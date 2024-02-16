@@ -2,7 +2,7 @@
 title: "From Geo to Geo"
 author: "Katie Murenbeeld"
 date: '2024-02-14'
-excerpt: 
+excerpt: ...On my transition from geologist to geographer 
 subtitle: 'First blog post in a series'
 draft: false
 series: 
@@ -16,9 +16,11 @@ output:
     highlight: tango
 ---
 
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
 
 ```{css float-right-figure-caption, echo = FALSE}
 .my-right-figure {
