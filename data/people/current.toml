@@ -64,7 +64,14 @@
   text = ["2023-, BSc. Spatial patterns of wildlife conflict in the popular media."]
   [dbreedlovesarah.social]
     email = "sarahbreedlove@u.boisestate.edu"
-
+    
+[dgranthamjames]
+  name = "James Grantham"
+  mugshot = "mugshots/james.png"
+  text = ["2023-, BA. Spatial patterns of wildlife conflict in the popular media."]
+  [dgranthamjames.social]
+    email = "jamesgrantham@u.boisestate.edu@u.boisestate.edu"
+    
 [dpotterlaura]
   name = "Laura Potter"
   mugshot = "mugshots/laura.png"
