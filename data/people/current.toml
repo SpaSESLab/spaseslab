@@ -78,3 +78,10 @@
   text = ["2023-, BA. Spatial patterns of wildlife conflict in the popular media."]
   [dpotterlaura.social]
     email = "laurapotter@u.boisestate.edu"
+
+[dsmithlily]
+  name = "Lily Smith"
+  mugshot = "mugshots/lily.png"
+  text = ["2023-, BSc. Natural language processing of environmental media."]
+  [dsmithlily.social]
+    email = "lilysmith337@u.boisestate.edu"    
