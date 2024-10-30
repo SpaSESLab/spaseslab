@@ -124,7 +124,7 @@ diag(adj.mtx) <- 0 #the diagonal in adjacency matrix is the "self" connections w
 
 dimnames(adj.mtx) <- list(sg.pacs.cent$UniqueID, sg.pacs.cent$UniqueID) #necessary to allow the joining of node 'attributes' to the adjacency matrix
 
-sg.graph <- as_tbl_graph(adj.mtx, directed = FALSE, nodes = st_drop_geometry(sg.pacs.dist), node_key = "UniqueID") %>% left_join(., sg.pacs.cent, by = c("name" = "UniqueID"))
+sg.graph <- as_tbl_graph(adj.mtx, directed=FALSE) %>% left_join(., sg.pacs.cent, by = c("name" = "UniqueID"))
 
 #Now let's take a look at the resulting graph
 ggraph(sg.graph, 'kk') + 
