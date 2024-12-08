@@ -150,7 +150,7 @@ In practice, many of these metrics (centralities, degree, etc) are correlated, b
 sg.graph.mets <- sg.graph %>% 
   activate(nodes) %>% 
   mutate(., bet.centrality = centrality_betweenness(),
-            close.centrality = centrality_closeness_harmonic(),
+            close.centrality = centrality_harmonic(),
             deg = degree(.))
 
 
@@ -220,8 +220,7 @@ for (i in 1:length(thresholds)){
   adj.mtx <- adj.mtx *1
   diag(adj.mtx) <- 0
   dimnames(adj.mtx) <- list(sg.pacs.cent$UniqueID, sg.pacs.cent$UniqueID)
-  sg.graph <- as_tbl_graph(adj.mtx, directed = FALSE, nodes = st_drop_geometry(sg.pacs.dist),
-                           node_key = "UniqueID") %>% 
+  sg.graph <- as_tbl_graph(adj.mtx, directed = FALSE) %>% 
     left_join(., sg.pacs.cent, by = c("name" = "UniqueID"))
   thresh.df$thresh.dist[i] <- thresholds[i]
   thresh.df$mean.between[i] <- mean(betweenness(sg.graph, directed = FALSE))
@@ -262,8 +261,7 @@ for (i in 1:length(node.prop)){
   adj.mtx <- adj.mtx *1
   diag(adj.mtx) <- 0
   dimnames(adj.mtx) <- list(sg.pacs.red$UniqueID, sg.pacs.red$UniqueID)
-  sg.graph <- as_tbl_graph(adj.mtx, directed = FALSE, nodes = st_drop_geometry(sg.pacs.red.dist),
-                           node_key = "UniqueID") %>% 
+  sg.graph <- as_tbl_graph(adj.mtx, directed = FALSE) %>% 
     left_join(., sg.pacs.red, by = c("name" = "UniqueID"))
   node.df$nodes.removed[i] <- num.nodes
   node.df$mean.between[i] <- mean(betweenness(sg.graph, directed = FALSE))
@@ -287,7 +285,7 @@ All of the metrics treated distances between connected nodes equally  (i.e., the
 For the sake of computational efficiency, we are going to use the PACs from the Columbia Plateau in WA (i.e., MZ6). We're also only going to use 1 potential source of resistance: topographic ruggedness. The primary goal here is to illustrate how you go from a raster dataset to a resistance surface. In an ideal world, you have the results of a step selection function analysis that will inform the exact relationship between the predictor (depicted as a raster) and resistance, but we may not always have that or we may be uncertain about what functional form the relationship might take. Here we calculate the topographic ruggedness, try 3 different functional forms, and convert the data into a transition layer that the `gdistance` package can use for a variety of different analyses. 
 
 ```{r resistsurf}
-library(raster)
+library(terra)
 library(gdistance)
 library(FedData)
 sg.pacs.cent <- sg.pacs %>% 
@@ -295,7 +293,7 @@ sg.pacs.cent <- sg.pacs %>%
   st_centroid(sg.pacs, of_largest_polygon = TRUE)
 
 elev <- get_ned(as(sg.pacs.cent, "Spatial"), "MZ6")
-tri <- terrain(elev, opt="TRI")
+tri <- terrain(elev, v="TRI")
 tri.agg <- aggregate(tri, fact = 30, fun=max) #aggregate to make life a little easier
 
 ```
@@ -306,17 +304,17 @@ To create the concave up form that is usable for resistance modeling, we'll scal
 
 ```{r conup, warning=FALSE}
 
-tri.agg.scl <- (tri.agg - cellStats(tri.agg, min))/(cellStats(tri.agg, max)-cellStats(tri.agg, min))
+tri.agg.scl <- scale(tri.agg)
 
-conc.up.3 <- (tri.agg.scl)^3
-conc.up.4 <- (tri.agg.scl)^4
-conc.up.8 <- (tri.agg.scl)^8
+conc.up.3 <- raster((tri.agg.scl)^3)
+conc.up.4 <- raster((tri.agg.scl)^4)
+conc.up.8 <- raster((tri.agg.scl)^8)
 
 opar <- par()
 par(mfrow = c(1,3))
-plot(tri.agg.scl, conc.up.3)
-plot(tri.agg.scl, conc.up.4)
-plot(tri.agg.scl, conc.up.8)
+plot(raster(tri.agg.scl), conc.up.3)
+plot(raster(tri.agg.scl), conc.up.4)
+plot(raster(tri.agg.scl), conc.up.8)
 par(opar)
 
 
@@ -327,15 +325,15 @@ par(opar)
 The concave-up functional form reflects a hypothesis that changes in TRI (or any variable contributing to resistance) has a relatively small effect on an animal's ability to traverse the landscape until you reach some 'threshold' at which point movement gets exponentially harder. The alternative view might be that above some minimal value of TRI, it gets substantially harder to move, but after that point there's little difference between higher values of TRI (or other resistance factors) and an animal's ability to move (i.e., there is an asymptotic relationship between the variable and the resistance value). To do this, we again add a 1 (to prevent undefined values), but this time we raise the value to a power <1. The smaller the number, the faster we reach the asymptote. 
 
 ```{r condn, warning=FALSE}
-conc.down.001 <- (tri.agg.scl)^0.01
-conc.down.01 <- (tri.agg.scl)^0.1
-conc.down.05 <- (tri.agg.scl)^0.5
+conc.down.001 <- raster((tri.agg.scl)^0.01)
+conc.down.01 <- raster((tri.agg.scl)^0.1)
+conc.down.05 <- raster((tri.agg.scl)^0.5)
 
 opar <- par()
 par(mfrow = c(1,3))
-plot(tri.agg.scl, conc.down.001)
-plot(tri.agg.scl, conc.down.01)
-plot(tri.agg.scl, conc.down.05)
+plot(raster(tri.agg.scl), conc.down.001)
+plot(raster(tri.agg.scl), conc.down.01)
+plot(raster(tri.agg.scl), conc.down.05)
 par(opar)
 ```
 
@@ -348,11 +346,11 @@ exp.up.trans <- transition(1/(1+conc.up.4), transitionFunction =  mean, directio
 exp.up.trans.c <- geoCorrection(exp.up.trans, "c", scl=TRUE)
 exp.up.trans.r <- geoCorrection(exp.up.trans, "r", scl=TRUE)
 sg.pacs.sp.c <- sg.pacs.cent %>% 
-  st_transform(., crs=crs(exp.up.trans.c)) %>% 
+  st_transform(., crs=crs(tri.agg.scl)) %>% 
   st_geometry(.) %>% 
   as_Spatial(.)
 sg.pacs.sp.r <- sg.pacs.cent %>% 
-  st_transform(., crs=crs(exp.up.trans.r)) %>% 
+  st_transform(., crs=crs(tri.agg.scl)) %>% 
   st_geometry(.) %>% 
   as_Spatial(.)
 ```
@@ -385,7 +383,7 @@ sg.pacs.poly <- sg.pacs %>%
   st_geometry(.) %>% 
   as_Spatial(.)
   
-plot(tri.agg.scl, axes=F)
+plot(raster(tri.agg.scl), axes=F)
 plot(sg.pacs.poly[2:3,], add=TRUE)
 points(sg.pacs.sp.c[2:3,], col = "blue")
 lines(least.cost, col="red")
