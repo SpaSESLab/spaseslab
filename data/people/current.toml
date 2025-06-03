@@ -29,13 +29,6 @@
     twitter = "@HollyNesbitt"
     github = "nesbittholly"
 
-[atarverryan]
-  name = "Ryan Tarver"
-  mugshot = "mugshots/ryant.png"
-  text = ["2023-, Postdoctoral Researcher. Cross-boundary collaboration and US protected areas"]
-  [atarverryan.social]
-    email = "ryantarver@boisestate.edu"
-    github = "ryantarver"    
 
 [browenemily]
   name = "Emily Rowen"
@@ -51,13 +44,6 @@
   [bkrzywickimike.social]
     email = "michaelkrzywicki@u.boisestate.edu"
     
-[cwallben]
-  name = "Ben Wall"
-  mugshot = "mugshots/ben.png"
-  text = ["2023-, Masters of Env. Mgmt. Spatial patterns of wildlife conflict in the popular media."]
-  [cwallben.social]
-    email = "benwall439@u.boisestate.edu"
-
 [dbreedlovesarah]
   name = "Sarah Breedlove"
   mugshot = "mugshots/sarah.png"

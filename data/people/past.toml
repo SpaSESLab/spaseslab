@@ -14,3 +14,18 @@
   [jamiefaselt.social]
     email = "jamiefaselt@u.boisestate.edu"
     github = "jamiefaselt"
+    
+[atarverryan]
+  name = "Ryan Tarver"
+  mugshot = "mugshots/ryant.png"
+  text = ["2023-2025, Postdoctoral Researcher. Cross-boundary collaboration and US protected areas"]
+  [atarverryan.social]
+    email = "ryantarver@boisestate.edu"
+    github = "ryantarver"      
+
+[cwallben]
+  name = "Ben Wall"
+  mugshot = "mugshots/ben.png"
+  text = ["2023-2025, Masters of Env. Mgmt. Spatial patterns of wildlife conflict in the popular media."]
+  [cwallben.social]
+    email = "benwall439@u.boisestate.edu"    
