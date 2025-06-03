@@ -1,7 +1,7 @@
 baseURL = "https://spaseslab.com"
 theme = "hugo-apero"
 languageCode = "en"
-title = "SpaSES Lab"
+title = "SPASES Lab"
 author = "Matthew A. Williamson"
 copyright = "" # set to override the auto generated copyright using org info and now year
 googleAnalytics = ""
