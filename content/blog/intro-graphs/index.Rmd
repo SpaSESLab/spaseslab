@@ -79,7 +79,7 @@ library(ggraph)
 
 #library(tidyr)
 #library(FedData)
-sg.pacs <- st_read("data/GRSG_2015_USFWS_StatusReview_PACs.shp") %>% 
+sg.pacs <- st_read("/Users/mattwilliamson/Websites/isdrfall23/slides/data/GRSG_2015_USFWS_StatusReview_PACs.shp") %>% 
   st_make_valid()
 tmap::tmap_mode("view")
 tmap::qtm(sg.pacs, basemaps = leaflet::providers$Stamen.TerrainBackground)
@@ -288,11 +288,16 @@ For the sake of computational efficiency, we are going to use the PACs from the 
 library(terra)
 library(gdistance)
 library(FedData)
+sg.pacs.cent.b <- sg.pacs %>% 
+  dplyr::filter(., MgmtZone == "MZ6") %>% 
+  st_centroid(.) %>% 
+  st_buffer(., dist = 10000)
 sg.pacs.cent <- sg.pacs %>% 
   dplyr::filter(., MgmtZone == "MZ6") %>% 
-  st_centroid(sg.pacs, of_largest_polygon = TRUE)
-
-elev <- get_ned(as(sg.pacs.cent, "Spatial"), "MZ6")
+  st_centroid(.)
+elev <- get_ned(sg.pacs.cent.b, "MZ6", force.redo = TRUE)
+sg.pacs.cent <- sg.pacs.cent %>% 
+  st_transform(., crs=crs(elev))
 tri <- terrain(elev, v="TRI")
 tri.agg <- aggregate(tri, fact = 30, fun=max) #aggregate to make life a little easier
 
@@ -304,10 +309,12 @@ To create the concave up form that is usable for resistance modeling, we'll scal
 
 ```{r conup, warning=FALSE}
 
-tri.agg.scl <- scale(tri.agg)
+nx <- minmax(tri.agg)    
+
+tri.agg.scl <- (tri.agg - nx[1,]) / (nx[2,] - nx[1,])
 
 conc.up.3 <- raster((tri.agg.scl)^3)
-conc.up.4 <- raster((tri.agg.scl)^4)
+conc.up.4 <- raster((tri.agg)^4)
 conc.up.8 <- raster((tri.agg.scl)^8)
 
 opar <- par()
@@ -342,15 +349,13 @@ par(opar)
 Note that `gdistance` uses transition layers that are built on conductance (the inverse of resistance) so we need to invert our resistance surface once we've built it. It also requires a special object called a `TransitionLayer`. Then, we have to add 1 to the entire surface. This is necessary because we have to invert the matrix to change resistance values to transition probabilities (i.e., we take 1/resistance matrix). In the places where TRI (or resistance, generally) is 0, this value is undefined so we add a 1 as a means of avoiding that without causing changes to the spatial juxtaposition of resistance values. We accomplish all of this in the call to `transition` below. We also have to make a geographic correction to correct for map distortions that arise from geographic (long/lat) projections combined with a grid that spans a large extent (because the cells change size as you move away from the equator) and/or with directions >4 (to deal with the fact that diagonal connections are longer than horizontal connections.). See`?gdistance::geoCorrection` for more information. Finally, we reproject our centroids to make sure that they are in the same coordinate reference system as the new `TransitionLayer` and convert them to a `SpatialPoints` object.
 
 ```{r prepforgdist}
-exp.up.trans <- transition(1/(1+conc.up.4), transitionFunction =  mean, directions=8)
+exp.up.trans <- transition(1/(1+conc.up.8), transitionFunction =  mean, directions=8)
 exp.up.trans.c <- geoCorrection(exp.up.trans, "c", scl=TRUE)
 exp.up.trans.r <- geoCorrection(exp.up.trans, "r", scl=TRUE)
 sg.pacs.sp.c <- sg.pacs.cent %>% 
-  st_transform(., crs=crs(tri.agg.scl)) %>% 
   st_geometry(.) %>% 
   as_Spatial(.)
 sg.pacs.sp.r <- sg.pacs.cent %>% 
-  st_transform(., crs=crs(tri.agg.scl)) %>% 
   st_geometry(.) %>% 
   as_Spatial(.)
 ```
@@ -362,11 +367,9 @@ Now that we have a TransitionLayer we can estimate a number of potentially relev
 
 ```{r distmets}
 
-pointDistance(sg.pacs.sp.c, lonlat=TRUE)
-costDistance(exp.up.trans.c, sg.pacs.sp.c)
+pointDistance(sg.pacs.sp.c)
+gdistance::costDistance(exp.up.trans.c, sg.pacs.sp.c)
 commuteDistance(exp.up.trans.r, sg.pacs.sp.r)
-rSPDistance(exp.up.trans.r,sg.pacs.sp.r, sg.pacs.sp.r, theta = 0.5, totalNet = "total" )
-rSPDistance(exp.up.trans.r,sg.pacs.sp.r, sg.pacs.sp.r, theta = 1, totalNet = "total" )
 
 ```
 
@@ -375,17 +378,17 @@ rSPDistance(exp.up.trans.r,sg.pacs.sp.r, sg.pacs.sp.r, theta = 1, totalNet = "to
 As we discussed in class, the least-cost path is a relatively simple to compute expression of the expected movement path across a landscape. We assume that the organism has "perfect" knowledge of the costs of traversing the landscape and "chooses" a route that minimizes those costs. These assumptions probably hold for species with consistent seasonal movement patterns (like elk moving from winter to summer range). We can identify the least-cost path pretty easily with `gDistance`. We'll focus on two of our PACs to ease computation time.
  
 ```{r lcost}
-least.cost <- shortestPath(exp.up.trans.c, sg.pacs.sp.c[2,], sg.pacs.sp.c[3,], output = "SpatialLines")
+least.cost <- shortestPath(exp.up.trans.c, sg.pacs.sp.c[2,], sg.pacs.sp.c[4,], output = "SpatialLines")
 
 sg.pacs.poly <- sg.pacs %>% 
   dplyr::filter(., MgmtZone == "MZ6") %>% 
-  st_transform(., crs=crs(exp.up.trans.c)) %>% 
+  st_transform(., crs=crs(exp.up.trans.c@srs)) %>% 
   st_geometry(.) %>% 
   as_Spatial(.)
   
 plot(raster(tri.agg.scl), axes=F)
-plot(sg.pacs.poly[2:3,], add=TRUE)
-points(sg.pacs.sp.c[2:3,], col = "blue")
+plot(sg.pacs.poly[c(2,4),], add=TRUE)
+points(sg.pacs.sp.c[c(2,4),], col = "blue")
 lines(least.cost, col="red")
 ```
  
@@ -395,10 +398,10 @@ As you can see, the least-cost path is only 1-pixel wide, which probably gives a
 ```{r acc}
 #estimate the accumulated costs from each point 
 pac.2.acccost <- accCost(exp.up.trans.c, sg.pacs.sp.c[2,])
-pac.3.acccost <- accCost(exp.up.trans.c, sg.pacs.sp.c[3,])
+pac.4.acccost <- accCost(exp.up.trans.c, sg.pacs.sp.c[4,])
 
 #combine the costs and identify lower threshold for costs
-lcc <- overlay(pac.2.acccost, pac.3.acccost, fun=function(x, y){return(x+y)})
+lcc <- overlay(pac.2.acccost, pac.4.acccost, fun=function(x, y){return(x+y)})
 quantile5 <- quantile(lcc, probs = 0.05, na.rm=TRUE) 
 
 #create the lcc surface
@@ -409,12 +412,12 @@ lcc05[lcc < quantile5] <- 1 #look for all cells in lcc with an accumulated cost 
 opar <- par()
 par(mfrow = c(2,2))
 plot(pac.2.acccost, axes=F)
-plot(pac.3.acccost, axes=F)
+plot(pac.4.acccost, axes=F)
 plot(lcc, axes=F)
 plot(tri.agg.scl, axes=F)
-plot(sg.pacs.poly[2:3,], add=TRUE)
+plot(sg.pacs.poly[c(2,4),], add=TRUE)
 plot(lcc05, add=TRUE, col="green", axes=F, legend=F)
-points(sg.pacs.sp.c[2:3,], col = "blue")
+points(sg.pacs.sp.c[2,4,], col = "blue")
 lines(least.cost, col="red")
 par(opar)
 ```
@@ -424,10 +427,10 @@ par(opar)
 For many ecological processes, the assumption of 'perfect' knowledge of the landscape is unlikely to hold (or even make sense). Dispersing juveniles may not know anything about the lands they move across. Ecological processes like fire do not have consciousness and do not make choices, _per se_. In those cases, we might imagine that movement or flows are much more stochastic and that the path ultimately taken is a more probabilistic outcome. In these cases, random-walks and their implementation via circuit theory might be a reasonable choice. In other cases, we might imagine a mix of exploration and exploitation to be a better reflection of how an organism experiences the landscape. Randomized shortest paths provide a means of exploring these different options all within the `gDistance::passage` function simply by manipulating the theta parameter. Remember that as you move from random walks to least cost paths, you'll need to use the appropriate geoCorrection. A quick note - if you are interested in the fully circuit-theoretic implementation, Circuitscape is a program that is implemented in Julia and is much faster than the version implemented by `gDistance`.
 
 ```{r passage}
-p0015 <- passage(exp.up.trans.r, sg.pacs.sp.c[2,], sg.pacs.sp.c[3,], theta = 0.0015)
-p015 <- passage(exp.up.trans.r, sg.pacs.sp.c[2,], sg.pacs.sp.c[3,], theta = 0.015)
-p15 <- passage(exp.up.trans.c, sg.pacs.sp.c[2,], sg.pacs.sp.c[3,], theta = 1.5)
-p175 <- passage(exp.up.trans.c, sg.pacs.sp.c[2,], sg.pacs.sp.c[3,], theta = 1.75)
+p0015 <- passage(exp.up.trans.r, sg.pacs.sp.r[2,], sg.pacs.sp.c[4,], theta = 0.0015)
+p015 <- passage(exp.up.trans.r, sg.pacs.sp.r[2,], sg.pacs.sp.c[4,], theta = 0.015)
+p15 <- passage(exp.up.trans.r, sg.pacs.sp.r[2,], sg.pacs.sp.c[4,], theta = 1.5)
+p175 <- passage(exp.up.trans.r, sg.pacs.sp.r[2,], sg.pacs.sp.c[4,], theta = 1.75)
 
 opar <- par()
 par(mfrow = c(2,2))
