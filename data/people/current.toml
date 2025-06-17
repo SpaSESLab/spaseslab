@@ -52,12 +52,6 @@
   [bthomaskuzilikbecca.social]
     email = "beccathomaskuzilik@u.boisestate.edu"    
     
-[dbreedlovesarah]
-  name = "Sarah Breedlove"
-  mugshot = "mugshots/sarah.png"
-  text = ["2023-, BSc. Spatial patterns of wildlife conflict in the popular media."]
-  [dbreedlovesarah.social]
-    email = "sarahbreedlove@u.boisestate.edu"
     
 [dgranthamjames]
   name = "James Grantham"

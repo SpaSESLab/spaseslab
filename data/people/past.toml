@@ -29,3 +29,10 @@
   text = ["2023-2025, Masters of Env. Mgmt. Spatial patterns of wildlife conflict in the popular media."]
   [cwallben.social]
     email = "benwall439@u.boisestate.edu"    
+
+[dbreedlovesarah]
+  name = "Sarah Breedlove"
+  mugshot = "mugshots/sarah.png"
+  text = ["2023-2025, BSc. Spatial patterns of wildlife conflict in the popular media."]
+  [dbreedlovesarah.social]
+    email = "sarahbreedlove@u.boisestate.edu"    
