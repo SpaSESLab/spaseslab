@@ -1,4 +1,4 @@
-baseURL = "https://spaseslab.com"
+baseURL = "https://spaseslab.com/"
 theme = "hugo-apero"
 languageCode = "en"
 title = "SPASES Lab"

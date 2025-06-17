@@ -1,5 +1,8 @@
 ---
 author: The SPASES Lab
+outputs:
+  - html
+  - rss
 cascade:
   author: The SPASES Lab
   show_author_byline: true
@@ -20,7 +23,7 @@ sidebar:
   description: "This blog is intended to be a place where we try out different ideas, get practice writing about complex topics, and introduce some of the techniques we use to understand the interaction between social and ecological systems"
   show_sidebar_adunit: false
   text_link_label: Subscribe via RSS
-  text_link_url: /index.xml
+  text_link_url: /blog/index.xml
   title: Things we are thinking about
 thumbnail_left: true
 title: The SPASES Blog
