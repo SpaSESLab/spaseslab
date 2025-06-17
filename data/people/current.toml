@@ -9,6 +9,7 @@
   [mattwilliamson.social]
     email = "mattwilliamson@boisestate.edu"
     github = "mattwilliamson13"
+    scholar = "SfbubrAAAAAJ"
     www = "https://www.boisestate.edu/hes/people/matt-williamson/"
 
 [amurenbeeldkatie]
@@ -27,6 +28,7 @@
     email = "nesbitt.holly@gmail.com"
     twitter = "@HollyNesbitt"
     github = "nesbittholly"
+    scholar = "2e3-4VoAAAAJ"
 
 
 [browenemily]
@@ -39,9 +41,16 @@
 [bkrzywickimike]
   name = "Mike Krzywicki"
   mugshot = "mugshots/mike.png"
-  text = ["2023-, PhD Ecology, Evolution, and Behavior. Conservation institutions in Mexico."]
+  text = ["2023-, PhD Ecology, Evolution, and Behavior. Phenological relations between birds and place attachment."]
   [bkrzywickimike.social]
     email = "michaelkrzywicki@u.boisestate.edu"
+
+[bthomaskuzilikbecca]
+  name = "Becca Thomas-Kuzilik"
+  mugshot = "mugshots/becca.png"
+  text = ["2025-, PhD Ecology, Evolution, and Behavior. Conservation planning for Aplomado Falcons"]
+  [bthomaskuzilikbecca.social]
+    email = "beccathomaskuzilik@u.boisestate.edu"    
     
 [dbreedlovesarah]
   name = "Sarah Breedlove"
@@ -64,9 +73,9 @@
   [dpotterlaura.social]
     email = "laurapotter@u.boisestate.edu"
 
-[dsmithlily]
+[csmithlily]
   name = "Lily Smith"
   mugshot = "mugshots/lily.png"
   text = ["2023-, BSc. Natural language processing of environmental media."]
-  [dsmithlily.social]
+  [csmithlily.social]
     email = "lilysmith337@u.boisestate.edu"    
