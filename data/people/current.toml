@@ -11,6 +11,7 @@
     github = "mattwilliamson13"
     scholar = "SfbubrAAAAAJ"
     www = "https://www.boisestate.edu/hes/people/matt-williamson/"
+    orcid = "0000-0002-2550-5828"
 
 [amurenbeeldkatie]
   name = "Katie Murenbeeld"
@@ -19,6 +20,8 @@
   [amurenbeeldkatie.social]
     email = "katiemurenbeeld@u.boisestate.edu"
     github = "KatieMurenbeeld"
+    scholar = "E1z69WMAAAAJ"
+    orcid = "0000-0003-0147-7655"
 
 [anesbittholly]
   name = "Holly Nesbitt"
@@ -29,6 +32,7 @@
     twitter = "@HollyNesbitt"
     github = "nesbittholly"
     scholar = "2e3-4VoAAAAJ"
+    orcid = "0000-0002-4455-7607"
 
 
 [browenemily]
@@ -72,4 +76,6 @@
   mugshot = "mugshots/lily.png"
   text = ["2023-, BSc. Natural language processing of environmental media."]
   [csmithlily.social]
-    email = "lilysmith337@u.boisestate.edu"    
+    email = "lilysmith337@u.boisestate.edu"
+    orcid = "0009-0005-0499-8255"
+    github = "LilyBSmith"
