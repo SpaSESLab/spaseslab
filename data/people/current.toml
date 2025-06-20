@@ -10,7 +10,7 @@
     email = "mattwilliamson@boisestate.edu"
     github = "mattwilliamson13"
     scholar = "SfbubrAAAAAJ"
-    www = "https://www.boisestate.edu/hes/people/matt-williamson/"
+    web = "https://www.boisestate.edu/hes/people/matt-williamson/"
     orcid = "0000-0002-2550-5828"
 
 [amurenbeeldkatie]
@@ -33,6 +33,17 @@
     github = "nesbittholly"
     scholar = "2e3-4VoAAAAJ"
     orcid = "0000-0002-4455-7607"
+    
+[ajebelliniloofar]
+  name = "Niloofar Bagheri Jebelli"
+  mugshot = "mugshots/niloo.png"
+  text = ["2025-, Postdoctoral Researcher. Emergence of pollinator conservation institutions"]
+  [ajebelliniloofar.social]
+    email = "niloofarbagherij@boisestate.edu"
+    github = "niloofar-jebelli"
+    scholar = "IVYNi84AAAAJ"
+    orcid = "0000-0002-6881-7864"
+    web = "https://niloofar-jebelli.github.io/"
 
 
 [browenemily]
@@ -76,6 +87,13 @@
   mugshot = "mugshots/lily.png"
   text = ["2023-, BSc. Natural language processing of environmental media."]
   [csmithlily.social]
-    email = "lilysmith337@u.boisestate.edu"
+    email = "lilysmith337@boisestate.edu"
     orcid = "0009-0005-0499-8255"
     github = "LilyBSmith"
+
+[cshieldsbraelyn]
+  name = "Braelyn Shields"
+  mugshot = "mugshots/braelyn.png"
+  text = ["2024-, Masters of Env Mgmt. Federal Capacity & Collaborative Conservation"]
+  [cshieldsbraelyn.social]
+    email = "braelynshields@boisestate.edu"
