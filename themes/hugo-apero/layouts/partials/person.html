@@ -7,7 +7,7 @@
         {{ if .social.email }}<a href="mailto:{{ .social.email }}"><i class="fas fa-at"></i></a>{{ end }}
         {{ if .social.scholar }}<a href="https://scholar.google.com/citations?user={{ .social.scholar }}&hl=en\\&oi=ao"><i class="ai ai-google-scholar"></i></a>{{ end }}
         {{ if .social.orcid }}<a href="https://orcid.org/{{ .social.orcid }}"><i class="ai ai-orcid"></i></a>{{ end }}
-        {{ if .social.web }}<a href="https://{{ .social.web }}"><i class="fas fa-network-wired"></i></a>{{ end }}
+        {{ if .social.web }}<a href="{{ .social.web }}"><i class="fas fa-network-wired"></i></a>{{ end }}
     </div>
     <div class="summary">
         {{range .text }}
