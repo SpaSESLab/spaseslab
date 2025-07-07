@@ -15,3 +15,20 @@ output:
     toc_depth: 1
     highlight: tango
 ---
+
+## What is political polarization?
+
+## Why do we care about polarization generally?
+
+## Why might polarization matter for wildlife conservation?
+Wildlife management in North America is carried out under the public trust doctrine wherein all of the citizens of a nation "own" the wildlife, but they are held in trust by the state. Although this frees us from aristocratic notions of wildlife being tied to property, it does mean that we have to understand what our trustees want in order to act on behalf of their trust. This is tricky. Different "publics" have different goals for wildlife (and maybe for different species of wildlife). Some folks might want more (or better) hunting opportunities for things with antlers or feathers. Some folks might want to symbols of "American wilderness" to continue to exist. Some folks might want to see more of a rare species, others might want to see less of a species that causes physical or financial harm. Navigating these different objectives while constrained by the "laws" of population dynamics and species ecology has historically been treated as a technical problem and the task for state (and some federal) biologists. 
+
+Values, DEFINE, and their descendents, the logic goes, matter because they shape both the objectives a "public" may have AND provide the guideposts for evaluating the success of these technical interventions in order to hold the state accountable. Lurking behind the scenes, however, are a number of places where politics intervenes potentially confusing the link between individual values and the collective choices we make about how we want wildlife to be managed. Perhaps the most obvious place this shows up is in the makeup of state wildlife agency leadership commissions. These entities craft the direction of the state by setting priorities, approving budgets, and attempting to influence the various components of the technocracy. In the United States, xxx of these are comprised of individuals appointed by the governor, xxx of these are elected independently, and xxx of these are made up of long-time agency employees. In Canada, where provinces retain this function xxx, yyy, zzz.  As such, the winner of elections helps arbiter which "publics" trust reponsibilities are met and which are not (or at least de-emphasized). 
+
+In addition to the structural core of wildlife manage
+
+## What are some good empirical signals of polarization?
+
+## How do we use models to identify polarization?
+
+## What do we see??
