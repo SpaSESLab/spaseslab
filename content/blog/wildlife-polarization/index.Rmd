@@ -1,0 +1,17 @@
+---
+title: "Why politics (not values) matters for wildlife"
+author: "Matt Williamson"
+date: '2025-07-06'
+excerpt: Wildlife (and conservation) have been extremely preoccupied with individual values, attitudes, and beliefs as precursors for behavioral change. Here we try to build an alternative explanatation for why wildlife conservation is (increasingly) hard
+subtitle: ''
+draft: true
+series: 
+tags: 
+categories: 
+layout: single-sidebar
+output:
+  blogdown::html_page:
+    toc: true
+    toc_depth: 1
+    highlight: tango
+---
