@@ -74,11 +74,11 @@
   [dgranthamjames.social]
     email = "jamesgrantham@u.boisestate.edu@u.boisestate.edu"
     
-[dpotterlaura]
+[epotterlaura]
   name = "Laura Potter"
   mugshot = "mugshots/laura.png"
   text = ["2023-, BA. Spatial patterns of wildlife conflict in the popular media."]
-  [dpotterlaura.social]
+  [epotterlaura.social]
     email = "laurapotter@u.boisestate.edu"
 
 [csmithlily]
@@ -90,9 +90,9 @@
     orcid = "0009-0005-0499-8255"
     github = "LilyBSmith"
 
-[cshieldsbraelyn]
+[dshieldsbraelyn]
   name = "Braelyn Shields"
   mugshot = "mugshots/braelyn.png"
   text = ["2024-, Masters of Env Mgmt. Federal Capacity & Collaborative Conservation"]
-  [cshieldsbraelyn.social]
+  [dshieldsbraelyn.social]
     email = "braelynshields@boisestate.edu"
