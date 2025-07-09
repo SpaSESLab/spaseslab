@@ -17,8 +17,9 @@ output:
 ---
 
 ## What is political polarization?
+Define polarization. Is it different than partisanship? Is there a reason to distinguish between the two?
 
-## Why do we care about polarization generally?
+## What do we know about polarization and the environment?
 
 ## Why might polarization matter for wildlife conservation?
 Wildlife management in North America is carried out under the public trust doctrine wherein all of the citizens of a nation "own" the wildlife, but they are held in trust by the state. Although this frees us from aristocratic notions of wildlife being tied to property, it does mean that we have to understand what our trustees want in order to act on behalf of their trust. This is tricky. Different "publics" have different goals for wildlife (and maybe for different species of wildlife). Some folks might want more (or better) hunting opportunities for things with antlers or feathers. Some folks might want to symbols of "American wilderness" to continue to exist. Some folks might want to see more of a rare species, others might want to see less of a species that causes physical or financial harm. Navigating these different objectives while constrained by the "laws" of population dynamics and species ecology has historically been treated as a technical problem and the task for state (and some federal) biologists. 
@@ -27,7 +28,7 @@ Values, DEFINE, and their descendents, the logic goes, matter because they shape
 
 In addition to the potential effects of politics (and thus, polarization) on the structural core of wildlife management agencies, an increasing number of natural resource decisions are being made via direct (e.g.,, ballot initiatives) or representative (e.g., state or federal legislation) democracy. For example, gray wolves were recently reintroduced to Colorado following a ballot initiative passed by Colorado residents. Interestingly, Congress passed laws removing wolves from Endangered Species Act protections in the northern Rockies (2011) and across the rest of the US (2024). In both cases, the votes largely followed party lines. As importantly, donors contributing to each side of the campaigns were some of the usual suspects engaged in partisan issues. 
 
-Although the passage of the wolf reintroduction ballot measure is consistent with the notion that American wildlife values are becoming more mutualistic, the removal of wolves from the protection of the Endangered Species Act is not. Similarly, most (all?) states continue to rely primarily on hunting and fishing revenues, an approach consistent with utilitarian values, as the means of supporting non-game species conservation actions suggests that individual values (and changes to those values) alone do not explain contemporary wildlife decision-making. There are two alternatives that might be worth exploring. The first is the one we've been talking about here: namely that in situations where technical expertise is lacking, people tend to revert towards their political identities (which may be distinct from their personal values towards wildlife). The second is that species matters resulting in different preferences depending which species is under consideration
+Although the passage of the wolf reintroduction ballot measure is consistent with the notion that American wildlife values are becoming more mutualistic, the removal of wolves from the protection of the Endangered Species Act is not. Similarly, most (all?) states continue to rely primarily on hunting and fishing revenues, an approach consistent with utilitarian values, as the means of supporting non-game species conservation actions suggests that individual values (and changes to those values) alone do not explain contemporary wildlife decision-making. There are two alternatives that might be worth exploring. The first is the one we've been talking about here: namely that in situations where technical expertise is lacking, people tend to revert towards their political identities (which may be distinct from their personal values towards wildlife). The second is that species matters resulting in different preferences depending which species is under consideration.
 
 ## What are some good empirical signals of polarization?
 
@@ -36,7 +37,7 @@ Although the passage of the wolf reintroduction ballot measure is consistent wit
 ```{r}
 set.seed(123)
 n <- 1000
-age <- rnorm(n, 40, 10)
+age <- runif(n = n, min = 0, max = 7)
 
 # Simulate latent trait (centered)
 eta <- scale(0.3 * age + rnorm(n, 0, 1))  # mean ~0, sd ~1
@@ -64,6 +65,26 @@ ordinal_df$ID <- 1:n
 # Check balance
 sapply(ordinal_df[1:4], table)
 
+library(brms)
+
+# Ordinal outcome models (all responses depend on person-level latent trait eta)
+bf1 <- bf(V1 ~ age + (1 | eta | ID), family = cumulative("logit"))
+bf2 <- bf(V2 ~ age + (1 | eta | ID), family = cumulative("logit"))
+bf3 <- bf(V3 ~ age + (1 | eta | ID), family = cumulative("logit"))
+bf4 <- bf(V4 ~ age + (1 | eta | ID), family = cumulative("logit"))
+
+
+# Latent trait model: eta depends on age
+bf_eta <- bf(eta ~ 1 + age + (1 | ID))  # latent trait varies by age and individual
+
+# Fit the full latent trait model
+fit_latent <- brm(
+  bf1 + bf2 + bf3 + set_rescor(FALSE),
+  data = ordinal_df,
+  chains = 4, cores = 4, iter = 2000,
+  control = list(adapt_delta = 0.95), 
+  backend = "cmdstanr"
+)
 
 ```
 
