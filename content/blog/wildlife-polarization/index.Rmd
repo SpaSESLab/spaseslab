@@ -34,7 +34,7 @@ Although the passage of the wolf reintroduction ballot measure is consistent wit
 
 ## How do we use models to identify polarization?
 
-```{r}
+```{r eval=FALSE, echo=FALSE}
 set.seed(123)
 n <- 1000
 age <- runif(n = n, min = 0, max = 7)
