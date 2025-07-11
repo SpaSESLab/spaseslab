@@ -8,7 +8,7 @@ subtitle: ''
 draft: false
 series: 
 tags: 
-categories: 
+categories: ["r"]
 layout: single-sidebar
 output:
   blogdown::html_page:

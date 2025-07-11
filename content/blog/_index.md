@@ -12,6 +12,7 @@ cascade:
     show_sidebar_adunit: false
     text_link_label: View recent posts
     text_link_url: /blog/
+    categories: ["coding", "academicLife", "new-papers"]
 description: "Things we're working on"
 layout: list-sidebar
 show_author_byline: true

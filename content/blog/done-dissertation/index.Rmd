@@ -7,7 +7,7 @@ subtitle: ''
 draft: true
 series: 
 tags: 
-categories: 
+categories: ["academicLife"]
 layout: single-sidebar
 output:
   blogdown::html_page:

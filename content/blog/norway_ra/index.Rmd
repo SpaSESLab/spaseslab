@@ -7,7 +7,7 @@ subtitle: ''
 draft: false
 series: 
 tags: 
-categories: 
+categories: ["journeys"]
 layout: single-sidebar
 output:
   blogdown::html_page:

@@ -9,4 +9,18 @@
   {{ partial "shared/sidebar/sidebar-link.html" .Params.sidebar }}
 </div>
 
+<section class="sidebar-widget">
+  <h3 class="f5 fw6">Tag Cloud</h3>
+  <div class="tag-cloud">
+    {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+      <a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}"
+         style="font-size: {{ mul 0.5 (add 1 (log (len $taxonomy))) }}rem"
+         class="link dim dark-blue dib mr2 mb2">
+        {{ $name }}
+      </a>
+    {{ end }}
+  </div>
+</section>
+
+
 {{ partial "shared/sidebar/sidebar-adunit.html" .Params.sidebar }}

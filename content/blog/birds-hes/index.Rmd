@@ -7,7 +7,7 @@ subtitle: ''
 draft: false
 series: 
 tags: 
-categories: 
+categories: ["misc"] 
 layout: single-sidebar
 output:
   blogdown::html_page:
