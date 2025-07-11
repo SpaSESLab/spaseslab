@@ -66,6 +66,14 @@
   text = ["2025-, PhD Ecology, Evolution, and Behavior. Conservation planning for Aplomado Falcons"]
   [bthomaskuzilikbecca.social]
     email = "beccathomaskuzilik@u.boisestate.edu"    
+
+[bnamyaloagnes]
+  name = "Agnes Namyalo"
+  mugshot = "mugshots/agnes.png"
+  text = ["2025-, PhD Computing. Impacts of wildife media on environmental policy"]
+  [bnamyaloagnes.social]
+    github = "Arglytics"
+    email = "agnesnamyalo@u.boisestate.edu"    
     
 [dgranthamjames]
   name = "James Grantham"
