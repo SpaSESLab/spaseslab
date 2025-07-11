@@ -24,10 +24,10 @@
 {{ end }}
 
 <section class="sidebar-widget">
-  <h3 class="f5 fw6 near-white">Categories</h3>
+  <h3 class="f19 fw6 near-white">Categories</h3>
   <div class="tag-cloud">
     {{ range $cat, $pages := $catMap }}
-      {{ $size := (add 0.9 (mul 0.1 (len $pages))) | printf "%.1f" }}
+      {{ $size := (add 0.5 (mul 0.1 (len $pages))) | printf "%.1f" }}
       <a href="{{ "/categories/" | relLangURL }}{{ $cat | urlize }}"
          style="font-size: {{ $size }}rem"
          class="link dim light-blue dib mr2 mb2">
