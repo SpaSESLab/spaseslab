@@ -66,7 +66,7 @@ enableRobotsTXT = true
   customheadingFontFamily = ""
   # alternatively, leave empty and select basic font options: sans-serif or serif
   # for more http://tachyons.io/docs/typography/font-family/
-  textFontFamily = "avenir"
+  textFontFamily = "baskerville"
   headingFontFamily = "garamond"
 
   # Configuration of https://utteranc.es/ for comments
