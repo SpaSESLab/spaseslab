@@ -1,0 +1,33 @@
+---
+title: "The perils (and promise) of conservation maps"
+author: "Matt Williamson"
+date: '2025-08-11'
+excerpt: When I started my PhD, I thought my mission was to help improve conservation planning by putting people on the map. A better map would help identify better places to work and (hopefully) better interventions for getting that work done. After a decade, I'm starting to think a bit differently about maps.
+subtitle: ''
+draft: true
+series: 
+tags: 
+categories: ["conservation"]
+layout: single-sidebar
+output:
+  blogdown::html_page:
+    toc: true
+    toc_depth: 1
+    highlight: tango
+---
+
+My son and I were watching Octonauts (which is, by the way, a fantastic bit of children's programming) one weekend. During one of the episodes a red panda (see? told you it was excellent) named Min describes herself as a mapmaker to which a giant panda asks: "What's a map?". Her answer is simple enough "a map helps you get from one place to another". Hard to argue with that, but it did make me start to ask what we have to accept for that simple answer to be true. 
+
+The proliferation of maps, spatial conservation plans, new algorithms for optimizing reserve design speaks of the power of maps in conservation. Yet, we haven't really spent a lot of time unpacking why that might be or what issues that might create for us. The typical argument is that conservation has limited resources, the number of places we could work is vast; hence, we need tools that help us identify and prioritize our work. It's the sort of "biggest bang for the buck" argument that resonates with both funders and bureaucrats, alike. Another reason is some mix of history, philosophy, and psychology. We've used maps for generations to delineate what we know from what we don't know, what is ours and what is not, and how those things might relate to each other in space. Whether as justification for exploration of a new route between "here" and "there", the foundation for strategic military operations, or the canvas on which we plan our cities and towns; humans recognize (and rely on) maps for many of our most consequential decisions. Maps distill (and maybe obscure) massive quantities of information and technical analyses into a picture that is immediately accessible to a variety of folks largely because we are already familiar with maps. While decision-makers and politicians may not know or care about sophisticated statistical analyses, they can readily understand a map and what it suggests to them. I think, then, the real reason that conservation has become preoccupied with maps is not so much that we need some way to know where to work (indeed, many folks who've worked in the field for decades can answer this question if it were posed to them). Instead, we are relying on the cultural familiarity and acceptance of maps as a depiction of reality to serve a socio-politically strategic puprose. 
+
+## We have to agree on where we're starting
+
+## We have to agree on the destination
+
+## We have to agree on the characteristics of a desirable route
+
+## We have to agree that the map can't change while we're on the path
+
+## We have to agree that the landmarks exist and are recognizable
+
+# What does this mean for conservation planning?
