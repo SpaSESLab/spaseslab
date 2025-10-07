@@ -5,7 +5,7 @@
     "Quantitative Geographer \\& Ecologist. Teaches environmental policy, governance, and data analysis",
     "Associate Professor, [Human-Environment Systems](https://www.boisestate.edu/hes/), Boise State University."
   ]
-  role = "Assistant professor"
+  role = "Associate Professor"
   [mattwilliamson.social]
     email = "mattwilliamson@boisestate.edu"
     github = "mattwilliamson13"
@@ -45,14 +45,6 @@
     orcid = "0000-0002-6881-7864"
     web = "https://niloofar-jebelli.github.io/"
 
-
-[browenemily]
-  name = "Emily Rowen"
-  mugshot = "mugshots/emily.png"
-  text = ["2024-, PhD Ecology, Evolution, and Behavior. Agricultural entrepreneurship and rural resilience"]
-  [browenemily.social]
-    email = "emilyrowen@u.boisestate.edu"
-    
 [bkrzywickimike]
   name = "Mike Krzywicki"
   mugshot = "mugshots/mike.png"
