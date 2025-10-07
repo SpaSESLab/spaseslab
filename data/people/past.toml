@@ -30,6 +30,13 @@
   [cwallben.social]
     email = "benwall439@u.boisestate.edu"    
 
+[browenemily]
+  name = "Emily Rowen"
+  mugshot = "mugshots/emily.png"
+  text = ["2024-2025, PhD Ecology, Evolution, and Behavior. Agricultural entrepreneurship and rural resilience"]
+  [browenemily.social]
+    email = "emilyrowen@u.boisestate.edu"
+    
 [dbreedlovesarah]
   name = "Sarah Breedlove"
   mugshot = "mugshots/sarah.png"
