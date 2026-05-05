@@ -1,17 +1,17 @@
-[shannonspragg]
+[bshannonspragg]
   name = "Shannon Spragg"
   mugshot = "mugshots/shannon.png"
   text = ["2020-2022, M.Sc. Integrating social, political, and economic factors into spatial models of grizzly bear conflict in British Columbia."]
-  [shannonspragg.social]
+  [bshannonspragg.social]
     email = "shannonspragg@u.boisestate.edu"
     twitter = "@spragg_shannon"
     github = "shannonspragg"
 
-[jamiefaselt]
+[bjamiefaselt]
   name = "Jamie Faselt"
   mugshot = "mugshots/jamie.png"
   text = ["2020-2022, M.Sc. Assessing the impacts of the social and political landscape on Plains Bison reintroduction efforts in Montana."]
-  [jamiefaselt.social]
+  [bjamiefaselt.social]
     email = "jamiefaselt@u.boisestate.edu"
     github = "jamiefaselt"
     
@@ -43,3 +43,34 @@
   text = ["2023-2025, BSc. Spatial patterns of wildlife conflict in the popular media."]
   [dbreedlovesarah.social]
     email = "sarahbreedlove@u.boisestate.edu"    
+
+[amurenbeeldkatie]
+  name = "Katie Murenbeeld"
+  mugshot = "mugshots/katie.png"
+  text = ["2022-2026, Postdoctoral Researcher. Causes and consequences of NEPA conflict."]
+  [amurenbeeldkatie.social]
+    email = "katiemurenbeeld@u.boisestate.edu"
+    github = "KatieMurenbeeld"
+    scholar = "E1z69WMAAAAJ"
+    orcid = "0000-0003-0147-7655"
+    
+[dgranthamjames]
+  name = "James Grantham"
+  mugshot = "mugshots/james.png"
+  text = ["2023-2026, BA. Spatial patterns of wildlife conflict in the popular media."]
+  [dgranthamjames.social]
+    email = "jamesgrantham@u.boisestate.edu@u.boisestate.edu"
+    
+[epotterlaura]
+  name = "Laura Potter"
+  mugshot = "mugshots/laura.png"
+  text = ["2023-2026, BA. Spatial patterns of wildlife conflict in the popular media."]
+  [epotterlaura.social]
+    email = "laurapotter@u.boisestate.edu"
+
+[dshieldsbraelyn]
+  name = "Braelyn Shields"
+  mugshot = "mugshots/braelyn.png"
+  text = ["2024-2026, Masters of Env Mgmt. Federal Capacity & Collaborative Conservation"]
+  [dshieldsbraelyn.social]
+    email = "braelynshields@boisestate.edu"    

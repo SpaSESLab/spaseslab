@@ -13,15 +13,6 @@
     web = "https://www.boisestate.edu/hes/people/matt-williamson/"
     orcid = "0000-0002-2550-5828"
 
-[amurenbeeldkatie]
-  name = "Katie Murenbeeld"
-  mugshot = "mugshots/katie.png"
-  text = ["2022, Postdoctoral Researcher. Causes and consequences of NEPA conflict."]
-  [amurenbeeldkatie.social]
-    email = "katiemurenbeeld@u.boisestate.edu"
-    github = "KatieMurenbeeld"
-    scholar = "E1z69WMAAAAJ"
-    orcid = "0000-0003-0147-7655"
 
 [anesbittholly]
   name = "Holly Nesbitt"
@@ -67,19 +58,6 @@
     github = "Arglytics"
     email = "agnesnamyalo@u.boisestate.edu"    
     
-[dgranthamjames]
-  name = "James Grantham"
-  mugshot = "mugshots/james.png"
-  text = ["2023-, BA. Spatial patterns of wildlife conflict in the popular media."]
-  [dgranthamjames.social]
-    email = "jamesgrantham@u.boisestate.edu@u.boisestate.edu"
-    
-[epotterlaura]
-  name = "Laura Potter"
-  mugshot = "mugshots/laura.png"
-  text = ["2023-, BA. Spatial patterns of wildlife conflict in the popular media."]
-  [epotterlaura.social]
-    email = "laurapotter@u.boisestate.edu"
 
 [csmithlily]
   name = "Lily Smith"
@@ -90,9 +68,4 @@
     orcid = "0009-0005-0499-8255"
     github = "LilyBSmith"
 
-[dshieldsbraelyn]
-  name = "Braelyn Shields"
-  mugshot = "mugshots/braelyn.png"
-  text = ["2024-, Masters of Env Mgmt. Federal Capacity & Collaborative Conservation"]
-  [dshieldsbraelyn.social]
-    email = "braelynshields@boisestate.edu"
+
