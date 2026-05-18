@@ -1,17 +1,17 @@
-[bshannonspragg]
+[cshannonspragg]
   name = "Shannon Spragg"
   mugshot = "mugshots/shannon.png"
   text = ["2020-2022, M.Sc. Integrating social, political, and economic factors into spatial models of grizzly bear conflict in British Columbia."]
-  [bshannonspragg.social]
+  [cshannonspragg.social]
     email = "shannonspragg@u.boisestate.edu"
     twitter = "@spragg_shannon"
     github = "shannonspragg"
 
-[bjamiefaselt]
+[cjamiefaselt]
   name = "Jamie Faselt"
   mugshot = "mugshots/jamie.png"
   text = ["2020-2022, M.Sc. Assessing the impacts of the social and political landscape on Plains Bison reintroduction efforts in Montana."]
-  [bjamiefaselt.social]
+  [cjamiefaselt.social]
     email = "jamiefaselt@u.boisestate.edu"
     github = "jamiefaselt"
     
@@ -61,16 +61,16 @@
   [dgranthamjames.social]
     email = "jamesgrantham@u.boisestate.edu@u.boisestate.edu"
     
-[epotterlaura]
+[dpotterlaura]
   name = "Laura Potter"
   mugshot = "mugshots/laura.png"
   text = ["2023-2026, BA. Spatial patterns of wildlife conflict in the popular media."]
-  [epotterlaura.social]
+  [dpotterlaura.social]
     email = "laurapotter@u.boisestate.edu"
 
-[dshieldsbraelyn]
+[cshieldsbraelyn]
   name = "Braelyn Shields"
   mugshot = "mugshots/braelyn.png"
   text = ["2024-2026, Masters of Env Mgmt. Federal Capacity & Collaborative Conservation"]
-  [dshieldsbraelyn.social]
+  [cshieldsbraelyn.social]
     email = "braelynshields@boisestate.edu"    
