@@ -6,7 +6,7 @@ description: We combine theory from ecological and social sciences with contempo
 image_left: true
 images:
 - img/Buffalo_Mosaic.png
-- img/SpaSES_Logo_Homepage.png
+- img/SpaSES_Logo_Homepage_slate.png
 show_action_link: true
 show_social_links: true
 subtitle: Boise State University

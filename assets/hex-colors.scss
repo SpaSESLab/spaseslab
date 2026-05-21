@@ -1,16 +1,80 @@
-// set custom hex colors 
-$siteBgColorCustom: #fff;
-$sidebarBgColorCustom: #103742;
-$textColorCustom: #666260;
-$sidebarTextColorCustom: #fff;
-$headlineColorCustom: #103742;
-$headingColorCustom: #a89090;
-$bodyLinkColorCustom: #6e0e1c;
-$navLinkColorCustom: #6e0e1c;
-$sidebarLinkColorCustom: #fff;
-$footerTextColorCustom: #918f8d;
-$buttonTextColorCustom: #f7f7f4;
-$buttonHoverTextColorCustom: #f9f9f8;
-$buttonBgColorCustom: #103742;
-$buttonHoverBgColorCustom: #6e0e1c;
-$borderColorCustom: #c4beb9;
+$siteBgColorCustom: #FFFFFF;
+$sidebarBgColorCustom: #5C2340;
+$textColorCustom: #2C1A2E;
+$sidebarTextColorCustom: #E8E5E0;
+$headlineColorCustom: #5C2340;
+$headingColorCustom: #5C2340;
+$bodyLinkColorCustom: #4A6E82;
+$navLinkColorCustom: #5C2340;
+$sidebarLinkColorCustom: #E8E5E0;
+$footerTextColorCustom: #B5ADA6;
+$buttonTextColorCustom: #FFFFFF;
+$buttonHoverTextColorCustom: #FFFFFF;
+$buttonBgColorCustom: #5C2340;
+$buttonHoverBgColorCustom: #5C2340;
+$borderColorCustom: #B5ADA6;
+
+.sidebar h1, .sidebar h2, .sidebar h3, .sidebar h4 {
+  color: #FFFFFF !important;
+}
+
+.mugshot {
+    filter: grayscale(70%);
+}
+
+.item {
+    &:hover {
+        .mugshot {
+            filter: grayscale(0%);
+        }
+    }
+ .summary {
+        span {
+            display: inline-block;
+            a {
+                display: inline;
+                color: $bodyLinkColor;
+                background: none;
+                padding: 0 0;
+                border-radius: 0;
+                font-weight: inherit;
+                &:hover {
+                    color: $buttonHoverTextColor;
+                }
+            }
+        }
+    }
+    .social {
+        a {
+            color: $bodyLinkColor;
+            background: none !important;
+            border-bottom: none;
+        }
+    }
+}
+.listing {
+    text-align: center;
+    margin-top: 5em;
+    margin-bottom: 5em;
+}
+#content {
+    ul, li {
+        list-style-type: circle;
+        line-height: 150%;
+    }
+    li {
+        margin-bottom: 1em;
+    }
+}
+.listing {
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;  
+   grid-gap: 20px;
+   padding: 20px 20px 20px;
+}
+
+.tag-cloud a {
+  text-decoration: none;
+  margin: 0.2em;
+  line-height: 1.5;
+}
