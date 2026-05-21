@@ -33,7 +33,7 @@ enableRobotsTXT = true
   orgLocal = "Human-Environment Systems, Boise State University"
   description = "Projects, Blog, Code, and Homepage of the SpasSES Lab"
   #favicon = "/img/favicon.ico"
-  logo = "/img/SpaSES_Logo.png"
+  logo = "/img/SpaSES_Logo_slate.png"
   mainSections = ["about", "values", "projects", "blog", "classes"]
   navallcaps = true
   # show/hide social icons in site header & footer
@@ -56,7 +56,7 @@ enableRobotsTXT = true
   # the custom scss file must be in the assets/ folder
   # add the filename name here, without extension
   # to use hex colors instead of named tachyons colors, include "hex" in filename
-  custom_theme = "theme1" 
+  custom_theme = "hex-colors" 
   
   # use an embedded font-family
   # serif options: Fraunces / EB Garamond / Bitter
