@@ -4,7 +4,7 @@ excerpt: "The restoration of culturally important species and systems can have a
 draft: false
 tags:
   - projects
-layout: single-proj
+layout: single-sidebar
 links:
 - icon: door-open
   icon_pack: fas

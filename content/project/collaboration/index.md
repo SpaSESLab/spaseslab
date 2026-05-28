@@ -4,7 +4,12 @@ excerpt: "Collaboration and social capital are critical for addressing wildfire 
 draft: false
 tags:
   - projects
-layout: single-proj
+layout: single-sidebar
+links:
+- icon: file-alt
+  icon_pack: fas
+  name: Nesbitt et al. 2024.
+  url: https://iopscience.iop.org/article/10.1088/1748-9326/ad7bd0
 ---
 ![](onepager.png)
 
