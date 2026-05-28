@@ -5,7 +5,7 @@ date: 2022-01-01
 draft: false
 tags:
   - projects
-layout: single-proj
+layout: single-sidebar
 links:
 - icon: file-alt
   icon_pack: fas

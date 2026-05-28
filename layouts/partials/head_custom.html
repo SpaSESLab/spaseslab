@@ -1,0 +1,103 @@
+<!-- layouts/partials/head_custom.html -->
+<!-- Merge with existing content if you already have this file -->
+
+<style>
+  /* ── Color variables ── */
+  :root {
+    --mulberry: #5C2340;
+    --bramble: #8B4367;
+    --slate: #4A6E82;
+    --pebble: #B8A198;
+    --sandstone: #D5CBC4;
+    --border: #B5ADA6;
+  }
+
+  /* ── Grid: uses Apéro's built-in .single-sidebar rules ── */
+
+  /* ── Sidebar styling ── */
+  .project-sidebar {
+    background: var(--mulberry);
+  }
+
+  /* Sidebar code link cards — pebble-tinted translucency */
+  .sidebar-code-link {
+    background: rgba(184, 161, 152, 0.12);
+    border: 1px solid rgba(184, 161, 152, 0.2);
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+  .sidebar-code-link:hover {
+    background: rgba(184, 161, 152, 0.22);
+    border-color: rgba(184, 161, 152, 0.35);
+  }
+
+  /* Sidebar related project links */
+  .sidebar-related-link {
+    transition: padding-left 0.15s ease;
+  }
+  .sidebar-related-link:hover {
+    padding-left: 0.25rem;
+  }
+
+  /* Sidebar tag pills — pebble tint */
+  .sidebar-tag {
+    color: var(--sandstone);
+    background: rgba(184, 161, 152, 0.15);
+    border: 1px solid rgba(184, 161, 152, 0.2);
+    transition: background 0.15s ease;
+  }
+  .sidebar-tag:hover {
+    background: rgba(184, 161, 152, 0.28);
+    color: #fff;
+  }
+
+  /* ── Main content: publications box — slate accents ── */
+  .project-pub-link {
+    background: #f7f9fa;
+    border: 1px solid #e2e8ec;
+    transition: border-color 0.15s ease, background 0.15s ease;
+    color: #2C1A2E;
+  }
+  .project-pub-link:hover {
+    border-color: var(--slate);
+    background: #eef3f5;
+  }
+  .project-pub-link .ml-auto {
+    margin-left: auto;
+  }
+
+  /* ── Metadata bar — slate icons, muted text ── */
+  .project-meta {
+    color: #666260;
+  }
+  .project-meta a {
+    color: var(--slate);
+  }
+  .project-meta a:hover {
+    color: var(--mulberry);
+  }
+
+  /* ── Title block ── */
+  .project-title-block {
+    margin-bottom: 1.5rem;
+  }
+
+  /* ── Body text reading width ── */
+  .post-body {
+    max-width: 65ch;
+  }
+  .post-body img {
+    max-width: 100%;
+  }
+
+  /* ── Existing sidebar heading fixes ── */
+  .sidebar-about h1,
+  .sidebar-about h2,
+  .sidebar-about h3,
+  .sidebar-about h4,
+  .sidebar h1,
+  .sidebar h2,
+  .sidebar h3,
+  .sidebar h4 {
+    color: #FFFFFF !important;
+  }
+</style>
