@@ -1,0 +1,150 @@
+{{ define "main" }}
+<main class="page-main pa4" role="main">
+  <section class="page-content mw8 center">
+    <article class="post-content pa0 pr5-l">
+      <header class="post-header">
+        {{/* Mulberry accent bar on title */}}
+        <div class="project-title-block bl bw2" style="border-color: var(--mulberry, #5C2340); padding-left: 1.25rem;">
+          <p class="f7 ttu tracked mb1" style="color: var(--pebble, #B8A198); letter-spacing: 0.1em;">Project</p>
+          <h1 class="f1 lh-solid measure mb3 fw4">{{ .Title }}</h1>
+          {{ if .Params.subtitle }}<h4 class="f4 mt0 mb4 lh-title measure">{{ .Params.subtitle }}</h4>{{ end }}
+        </div>
+
+        {{ if .Params.show_author_byline }}
+        <p class="f6 measure lh-copy mv1">
+          {{ if .Params.author }}By {{ .Params.author }}{{ end }}
+          {{ with .Params.categories }} in{{ range . }} <a href="{{ "categories/" | absURL }}{{ . | urlize }}">{{ . }}</a> {{ end }}{{ end }}
+        </p>
+        {{ end }}
+
+        {{ if .Params.show_post_date }}
+        <p class="f7 db mv0 ttu">{{ .PublishDate.Format "January 2, 2006" }}</p>
+        {{ end }}
+      </header>
+
+      {{/* Main content body */}}
+      <section class="post-body pt4 pb4">
+        {{ .Content }}
+      </section>
+
+      {{/* Publications — only fas (solid) icon links */}}
+      {{ if .Params.links }}
+      {{ $pubs := where .Params.links "icon_pack" "fas" }}
+      {{ if $pubs }}
+      <section class="project-links ba br2 pa4 mb4" style="border-color: var(--border, #B5ADA6);">
+        <h3 class="f5 fw6 mt0 mb3 flex items-center" style="color: var(--mulberry, #5C2340);">
+          <i class="fas fa-file-alt mr2"></i>
+          Publications
+        </h3>
+        <div class="flex flex-column" style="gap: 0.5rem;">
+          {{ range $pubs }}
+            {{ $pack := or .icon_pack "fas" }}
+            {{ $pack_prefix := $pack }}
+            {{ if in (slice "fab" "fas" "far" "fal") $pack }}
+              {{ $pack_prefix = "fa" }}
+            {{ end }}
+            {{ $link := .url }}
+            {{ $scheme := (urls.Parse $link).Scheme }}
+            {{ $target := "" }}
+            {{ if not $scheme }}
+              {{ $link = .url | relLangURL }}
+            {{ else if in (slice "http" "https") $scheme }}
+              {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
+            {{ end }}
+            <a class="project-pub-link flex items-center pa3 br2 no-underline" href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }}>
+              {{ with .icon }}<i class="{{ $pack }} {{ $pack_prefix }}-{{ . }} f5 mr3" style="color: var(--mulberry, #5C2340);"></i>{{ end }}
+              <span class="f6 fw5">{{ .name }}</span>
+              <i class="fas fa-external-link-alt ml-auto f7" style="color: var(--pebble, #B8A198);"></i>
+            </a>
+          {{ end }}
+        </div>
+      </section>
+      {{ end }}
+      {{ end }}
+
+      {{/* Horizontal metadata bar */}}
+      <section class="project-meta flex flex-wrap bt bb pv3 mb4 f7" style="border-color: var(--border, #B5ADA6); gap: 1.5rem;">
+        <div class="flex items-center">
+          <i class="fas fa-calendar-alt mr2" style="color: var(--mulberry, #5C2340);"></i>
+          <span>{{ .PublishDate.Format "January 2006" }}</span>
+        </div>
+        <div class="flex items-center">
+          <i class="fas fa-clock mr2" style="color: var(--mulberry, #5C2340);"></i>
+          <span>{{ .ReadingTime }} min read</span>
+        </div>
+        {{ with .Params.tags }}
+        <div class="flex items-center">
+          <i class="fas fa-tag mr2" style="color: var(--mulberry, #5C2340);"></i>
+          <span>{{ range $i, $t := . }}{{ if $i }}, {{ end }}<a href="{{ "tags/" | absURL }}{{ $t | urlize }}" class="link dim">{{ $t }}</a>{{ end }}</span>
+        </div>
+        {{ end }}
+      </section>
+
+      <footer class="post-footer">
+        {{ partial "shared/post-pagination.html" . }}
+      </footer>
+    </article>
+  </section>
+</main>
+
+{{/* ── SIDEBAR ── */}}
+<aside class="page-sidebar project-sidebar pa4" role="complementary">
+
+  {{/* Code repos — only fab (brand) icon links */}}
+  {{ if .Params.links }}
+  {{ $code := where .Params.links "icon_pack" "fab" }}
+  {{ if $code }}
+  <div class="mb4">
+    <h3 class="f7 fw6 ttu tracked near-white mb3" style="letter-spacing: 0.1em;">Code</h3>
+    <div class="flex flex-column" style="gap: 0.625rem;">
+      {{ range $code }}
+        {{ $pack := .icon_pack }}
+        {{ $pack_prefix := "fa" }}
+        {{ $link := .url }}
+        {{ $scheme := (urls.Parse $link).Scheme }}
+        {{ $target := "" }}
+        {{ if not $scheme }}
+          {{ $link = .url | relLangURL }}
+        {{ else if in (slice "http" "https") $scheme }}
+          {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
+        {{ end }}
+        <a class="sidebar-code-link flex items-center pa3 br2 no-underline" href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }}>
+          {{ with .icon }}<i class="{{ $pack }} {{ $pack_prefix }}-{{ . }} f4 mr3" style="color: #E8E5E0;"></i>{{ end }}
+          <span class="f6 fw5 near-white">{{ .name }}</span>
+        </a>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+  {{ end }}
+
+  {{/* Related projects */}}
+  {{ $related := first 3 ( where ( where .Site.Pages.ByDate.Reverse ".Params.tags" "intersect" .Params.tags ) "Permalink" "!=" .Permalink ) }}
+  {{ if $related }}
+  <div class="mb4">
+    <h3 class="f7 fw6 ttu tracked near-white mb3" style="letter-spacing: 0.1em;">Related</h3>
+    <div class="flex flex-column">
+      {{ range $related }}
+      <a href="{{ .RelPermalink }}" class="sidebar-related-link flex items-center pv2 f6 no-underline" style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+        <i class="fas fa-arrow-right mr2 f7" style="color: var(--bramble, #8B4367);"></i>
+        <span class="near-white">{{ .Title }}</span>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+
+  {{/* Tags */}}
+  {{ with .Params.tags }}
+  <div class="mb4">
+    <h3 class="f7 fw6 ttu tracked near-white mb3" style="letter-spacing: 0.1em;">Tags</h3>
+    <div class="flex flex-wrap" style="gap: 0.5rem;">
+      {{ range . }}
+      <a href="{{ "tags/" | absURL }}{{ . | urlize }}" class="f7 no-underline near-white ph2 pv1 br2" style="background: rgba(255,255,255,0.1);">{{ . }}</a>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+
+</aside>
+{{ end }}
