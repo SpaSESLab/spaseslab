@@ -1,0 +1,12 @@
+project:
+  type: hugo
+
+format:
+  hugo-md:
+    code-fold: false
+    
+engine: knitr
+
+execute:
+  warning: false
+  freeze: auto
